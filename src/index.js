@@ -1,18 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import AppHeader from './components/AppHeader';
-import SearchBar from './components/SearchBar';
-import TodoList from './components/TodoList';
-
-const App = () => {
-  return (
-    <div>
-      <AppHeader />
-      <SearchBar />
-      <TodoList />
-    </div>
-  );
-};
+import App from "./components/App/App";
 
 ReactDOM.render(<App />, document.getElementById('root'));

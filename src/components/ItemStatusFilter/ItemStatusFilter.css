@@ -1,0 +1,10 @@
+.item-status-filter .btn-primary.active {
+    color: white;
+    background-color: #0071e3;
+}
+
+.item-status-filter .btn-primary {
+    color: black;
+    background-color: #f1f0f0;
+    border-color: gray;
+}
