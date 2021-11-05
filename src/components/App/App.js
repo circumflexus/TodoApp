@@ -21,7 +21,9 @@ const App = () => {
         <SearchBar />
         <ItemStatusFilter />
       </div>
-      <TodoList itemData={todoData} />
+      <TodoList 
+        itemData={todoData}
+        onDelete={(id) => console.log('Del: ', id)} />
     </div>
   );
 };
