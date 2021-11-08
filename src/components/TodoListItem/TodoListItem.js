@@ -43,8 +43,7 @@ export default class TodoListItem extends React.Component {
         <span className={classNames}>
             <span
                 className="todo-list-item-label"
-                onClick={ this.onLabelClick }
-            >
+                onClick={ this.onLabelClick }>
                 {label}
             </span>
             <button type="button"
