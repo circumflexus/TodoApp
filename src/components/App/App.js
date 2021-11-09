@@ -16,7 +16,20 @@ export default class App extends React.Component {
       this.createItem('First task'),
       this.createItem('Second task'),
       this.createItem('Third task')
-    ]
+    ],
+    searchWord: ''
+  };
+
+  addItem = (text) => {
+    const newItem = this.createItem(text);
+
+    this.setState(({todoData}) => {
+      const result = [...todoData, newItem];
+
+      return {
+        todoData: result
+      }
+    });
   };
 
   createItem(text) {
@@ -38,17 +51,19 @@ export default class App extends React.Component {
     });
   };
 
-  addItem = (text) => {
-    const newItem = this.createItem(text);
+  search(items, word) {
+    if(word.length === 0) {
+      return items;
+    }
 
-    this.setState(({todoData}) => {
-      const result = [...todoData, newItem];
-
-      return {
-        todoData: result
-      }
+    return items.filter((item) => {
+      return item.label.toLowerCase().indexOf(word.toLowerCase()) > -1
     });
-  };
+  }
+
+  searchChange = (searchWord) => {
+    this.setState({searchWord});
+  }
 
   toggleProperty(arr, id, propName) {
     const index = arr.findIndex((item) => item.id === id);
@@ -81,6 +96,8 @@ export default class App extends React.Component {
   };
 
   render() {
+    const visibleItems = this.search(this.state.todoData, this.state.searchWord);
+
     const doneCount = this.state.todoData.filter((item) => item.done).length;
     const todoCount = this.state.todoData.length - doneCount;
 
@@ -88,11 +105,11 @@ export default class App extends React.Component {
       <div className="todo-app">
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
-          <SearchBar />
+          <SearchBar onSearchChange={this.searchChange} />
           <ItemStatusFilter />
         </div>
         <TodoList
-          itemData={this.state.todoData}
+          itemData={visibleItems}
           onDelete={this.deleteItem}
           onToggleImportant={this.toggleImportant}
           onToggleDone={this.toggleDone} />
