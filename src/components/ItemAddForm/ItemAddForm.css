@@ -2,6 +2,10 @@
     margin: 1rem 0;
 }
 
+.item-add-form input {
+    margin-right: 5px;
+}
+
 .btn {
     float: right;
 }
