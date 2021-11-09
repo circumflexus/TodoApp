@@ -2,59 +2,37 @@ import React from "react";
 import "./TodoListItem.css";
 
 export default class TodoListItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            done: false,
-            important: false
-        };
-    }
-
-    onLabelClick = () => {
-        this.setState((state) => {
-            return {
-                done: !state.done
-            };
-        });
-    }
-
-    onExclButtonClick = () => {
-        this.setState((state) => {
-            return {
-                important: !state.important
-            };
-        });
-    }
-
     render() {
-        const { label, onDelete } = this.props;
-        const {done, important} = this.state;
+        const { label, onDelete, onToggleImportant, onToggleDone, important, done } = this.props;
         let classNames = 'todo-list-item';
 
-        if(done) {
-            classNames += ' done';
+        if (important) {
+            classNames += ' important';
         }
 
-        if(important) {
-            classNames += ' important';
+        if (done) {
+            classNames += ' done';
         }
     
         return (
         <span className={classNames}>
-            <span
-                className="todo-list-item-label"
-                onClick={ this.onLabelClick }>
+            <button type="button"
+                    className="btn btn-outline-danger btn-sm float-start"
+                    onClick={ onToggleDone }>
+                <i className="fa fa-check-circle" />
+            </button>
+            <span className="todo-list-item-label">
                 {label}
             </span>
             <button type="button"
                     className="btn btn-outline-danger btn-sm float-end"
                     onClick={onDelete}>
-                X
+                <i className="fa fa-times-circle" />
             </button>
             <button type="button"
                     className="btn btn-outline-success btn-sm float-end"
-                    onClick={this.onExclButtonClick}>
-                !
+                    onClick={ onToggleImportant }>
+                <i className="fa fa-exclamation-circle" />
             </button>
         </span>
         );

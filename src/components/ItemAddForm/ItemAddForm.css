@@ -5,3 +5,15 @@
 .btn {
     float: right;
 }
+
+.btn-outline-secondary {
+    color: black;
+    background-color: #f1f0f0;
+    border-color: gray;
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    background-color: #0071e3;
+}
+

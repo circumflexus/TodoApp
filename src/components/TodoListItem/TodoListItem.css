@@ -20,6 +20,27 @@
   
   .todo-list-item.important .todo-list-item-label {
     font-weight: bold;
-    color: steelblue;
+    color: #0071e3;
+  }
+
+  .btn-outline-danger {
+    border-color: rgb(245, 245, 245);
+    color: #0071e3;
   }
   
+  .btn-outline-danger:hover {
+    border-color: rgb(245, 245, 245);
+    background-color: rgb(240, 240, 240);
+    color: #0071e3;
+  }
+  
+  .btn-outline-success {
+    border-color: rgb(245, 245, 245);
+    color: #0071e3;
+  }
+
+  .btn-outline-success:hover {
+    border-color: rgb(245, 245, 245);
+    background-color: rgb(240, 240, 240);
+    color: #0071e3;
+  }
