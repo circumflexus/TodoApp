@@ -17,7 +17,8 @@ export default class App extends React.Component {
       this.createItem('Second task'),
       this.createItem('Third task')
     ],
-    searchWord: ''
+    searchWord: '',
+    filter: 'all'
   };
 
   addItem = (text) => {
@@ -49,6 +50,26 @@ export default class App extends React.Component {
         todoData: result
       }
     });
+  };
+
+  filterItems(items, filter) {
+    switch(filter) {
+      case 'all':
+        return items;
+
+      case 'active':
+        return items.filter((item) => !item.done);
+
+        case 'done':
+          return items.filter((item) => item.done);
+
+        default:
+          return items;
+    }
+  }
+
+  filterChange = (filter) => {
+    this.setState({filter});
   };
 
   search(items, word) {
@@ -96,7 +117,8 @@ export default class App extends React.Component {
   };
 
   render() {
-    const visibleItems = this.search(this.state.todoData, this.state.searchWord);
+    const visibleItems = this.filterItems(
+      this.search(this.state.todoData, this.state.searchWord), this.state.filter);
 
     const doneCount = this.state.todoData.filter((item) => item.done).length;
     const todoCount = this.state.todoData.length - doneCount;
@@ -106,7 +128,9 @@ export default class App extends React.Component {
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
           <SearchBar onSearchChange={this.searchChange} />
-          <ItemStatusFilter />
+          <ItemStatusFilter
+            filter={this.state.filter}
+            onFilterChange={this.filterChange} />
         </div>
         <TodoList
           itemData={visibleItems}
