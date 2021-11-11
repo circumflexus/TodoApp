@@ -2,45 +2,49 @@
     font-size: 1.25rem;
   }
   
-  .todo-list-item button {
-    width: 35px;
-    margin: 3px;
-  }
+.todo-list-item button {
+  width: 35px;
+  margin: 3px;
+}
   
-  .todo-list-item-label {
-    margin-left: 1.25rem;
-    line-height: 35px;
-    cursor: pointer;
-    user-select: none;
-  }
+.todo-list-item-label {
+  margin-left: 1.25rem;
+  line-height: 35px;
+  cursor: pointer;
+  user-select: none;
+}
   
-  .todo-list-item.done .todo-list-item-label {
-    text-decoration: line-through;
-  }
+.todo-list-item.done .todo-list-item-label {
+  text-decoration: line-through;
+}
   
-  .todo-list-item.important .todo-list-item-label {
-    font-weight: bold;
-    color: #0071e3;
-  }
+.todo-list-item.important .todo-list-item-label {
+  font-weight: bold;
+  color: #0071e3;
+}
 
-  .btn-outline-danger {
-    border-color: rgb(245, 245, 245);
-    color: #0071e3;
-  }
+.btn-outline-danger {
+  border-color: rgb(245, 245, 245);
+  color: #0071e3;
+}
   
-  .btn-outline-danger:hover {
-    border-color: rgb(245, 245, 245);
-    background-color: rgb(240, 240, 240);
-    color: #0071e3;
-  }
+.btn-outline-danger:hover {
+  border-color: rgb(245, 245, 245);
+  background-color: rgb(240, 240, 240);
+  color: #0071e3;
+}
   
-  .btn-outline-success {
-    border-color: rgb(245, 245, 245);
-    color: #0071e3;
-  }
+.btn-outline-success {
+  border-color: rgb(245, 245, 245);
+  color: #0071e3;
+}
 
-  .btn-outline-success:hover {
-    border-color: rgb(245, 245, 245);
-    background-color: rgb(240, 240, 240);
-    color: #0071e3;
-  }
+.btn-outline-success:hover {
+  border-color: rgb(245, 245, 245);
+  background-color: rgb(240, 240, 240);
+  color: #0071e3;
+}
+
+.btn {
+  border-radius: 10px;
+}

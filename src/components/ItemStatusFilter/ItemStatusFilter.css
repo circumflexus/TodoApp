@@ -1,4 +1,18 @@
-.item-status-filter .btn-primary.active {
+.item-status-filter {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+
+}
+
+.btn-status {
+    padding: 5px 15px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.btn-status.active {
     color: white;
     background-color: #0071e3;
 }

@@ -1,3 +1,22 @@
+.todo-list {
+    width: 400px;
+    margin-bottom: 15px;
+    background-color: #f5f5f7;
+    border-radius: 15px;
+    padding: 15px;
+}
+
 .todo-list .list-group-item {
+    background-color: white;
+    border-radius: 15px;
+    border-color: #f5f5f7;
     padding: .25rem .75rem;
+    margin-bottom: 5px;
+}
+.todo-list .list-group-item:last-child {
+    margin-bottom: 0px;
+}
+
+.todo-list.empty {
+    display: none;
 }

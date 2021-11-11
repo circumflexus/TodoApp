@@ -24,16 +24,17 @@ export default class ItemAddForm extends React.Component {
 
     render() {
         return(
-            <form className="item-add-form d-flex"
+            <form className="item-add-form"
                     onSubmit={this.onSubmit}>
                 <input type="text"
-                        className="form-control"
+                        className="input-field"
                         onChange={this.onLabelChange}
                         placeholder="Add something"
-                        value={this.state.label} />
+                        value={this.state.label}
+                        required />
                 <button type="submit"
-                        className="btn btn-outline-secondary">
-                    +
+                        className="btn-submit">
+                    <i className="fa fa-angle-up" />
                 </button>
             </form>
         );

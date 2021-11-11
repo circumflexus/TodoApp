@@ -15,7 +15,7 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <input type="text"
-             className="form-control search-input"
+             className="search-input"
              placeholder="Search"
              value={this.state.searchWord}
              onChange={this.onSearchChange} />

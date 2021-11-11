@@ -17,8 +17,14 @@ const TodoList = ({ itemData, onDelete, onToggleImportant, onToggleDone }) => {
         );
     });
 
+    let classNames = "list-group todo-list";
+
+    if(elements.length === 0) {
+        classNames += " empty";
+    }
+
     return (
-      <ul className="list-group todo-list">
+      <ul className={classNames}>
           { elements }
       </ul>
     );

@@ -11,7 +11,7 @@ export default class ItemStatusFilter extends React.Component {
     render() {
         const buttons = this.buttons.map(({name, label}) => {
             const isActive = this.props.filter === name;
-            let classNames = "btn btn-primary";
+            let classNames = "btn-status";
             if(isActive) {
                 classNames += ' active';
             }
@@ -25,7 +25,7 @@ export default class ItemStatusFilter extends React.Component {
             );
         });
         return(
-            <div className="btn-group item-status-filter">
+            <div className="item-status-filter">
                 {buttons}
             </div>
         );

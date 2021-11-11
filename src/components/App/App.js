@@ -126,7 +126,7 @@ export default class App extends React.Component {
     return (
       <div className="todo-app">
         <AppHeader toDo={todoCount} done={doneCount} />
-        <div className="top-panel d-flex">
+        <div className="top-panel">
           <SearchBar onSearchChange={this.searchChange} />
           <ItemStatusFilter
             filter={this.state.filter}
